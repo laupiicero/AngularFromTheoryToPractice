@@ -1,0 +1,5 @@
+<!--Componenet epara generar nuestras propias bromas-->
+<joke-form (myOwnJoke)="addJoke($event)"></joke-form>
+
+<!--Componente bromas-->
+<joke *ngFor="let j of jokes" [joke]="j" (jokeRemove)="removeJoke($event)"></joke>
