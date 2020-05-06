@@ -3,23 +3,20 @@ import { Component, EventEmitter, Output } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 
 @Component({
-  selector: 'joke-form',
+  selector: 'app-joke-form',
   templateUrl: './joke-form.component.html',
   styleUrls: ['./joke-form.component.css']
 })
-export class JokeFormComponent{
+export class JokeFormComponent {
 
-  @Output() jokeCreated = new EventEmitter<Joke>();
+  @Output() myOwnJoke = new EventEmitter<Joke>();
   form: FormGroup;
   punchline: FormControl;
   setup: FormControl;
 
-  ngOnInit() {
-    this.createFormControls();
-    this.createForm();
-  }
+  constructor() { }
 
-
+  // Form Controls
   createFormControls() {
     this.setup = new FormControl('', Validators.required);
     this.punchline = new FormControl('', Validators.required);
@@ -32,7 +29,13 @@ export class JokeFormComponent{
     });
   }
 
-  createJoke(setup: string, punchline: string) {
-    this.jokeCreated.emit(new Joke(setup, punchline));
+  ngOnInit() {
+    this.createFormControls();
+    this.createForm();
+  }
+
+  // Método Crear Nueva Broma
+  makeAJoke(setup: string, punchline: string) {
+    this.myOwnJoke.emit(new Joke(setup, punchline));
   }
 }

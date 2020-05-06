@@ -1,46 +1,33 @@
-<div class="card card-block">
-    <!--Directiva personalizada-->
-    <div [ngClass]="assignClasses()">
-        <!--Bromas-->
-        <h4 class="card-title">{{joke.setup}}</h4>
-        <p class="card-text" [hidden]="joke.hide">{{joke.punchline}}</p>
-        <!--Botones-->
-        <a (click)="joke.toggle()" class="btn btn-warning">Show Me</a>
-        <a (click)="deleteJoke()" class="btn btn-danger">Delete Joke</a>
-    </div>
-    <!--Configuración-->
-    <div class="card card-block">
-        <h5>CHANGE VIEW</h5>
-        <label><input type="checkbox" (change)="changeBck()" /> Background</label>
-        <br />
-        <label><input type="checkbox" (change)="changeFont()" /> Font-Size (Answer)</label>
-    </div>
-</div>
-
-
-<!--Directiva tutorial anterior
+<!--Directiva tutorial-->
 <div class="card card-block ccCardHover">
-    Directiva personalizada Testing
+    <!--Directiva personalizada Testing-->
     <div [ngClass]="assignClasses()">
-        <h4 class="card-title"> {{ joke.setup }} </h4>
+        <h4 class="card-title"> {{ getformato(joke) }} </h4>
+        <!--<h4 class="card-title"> {{ joke.setup | uppercase }} </h4>
+        <h4 class="card-title"> {{ joke.setup | lowercase }} </h4>-->
 
-        <p class="card-text" [hidden]="joke.hide"> {{ joke.punchline }} </p>
+        <p class="card-text" [hidden]="joke.hide"> {{ getformato(joke) }} </p>
+        <!--<p class="card-text" [hidden]="joke.hide"> {{ joke.punchline | uppercase}} </p>
+        <p class="card-text" [hidden]="joke.hide"> {{ joke.punchline | lowercase}} </p>-->
         <a (click)="joke.toggle()" class="btn btn-warning"><b>Show Me</b></a>
         <a (click)="deleteJoke()" class="btn btn-warning"><b>Delete Joke</b></a>
+        <!--Botones-->
+        <a (click)="formatoMinus()" class="btn btn-warning"><b>to lowercase</b></a>
+        <a (click)="formatoMayusc()" class="btn btn-warning"><b>TO UPPERCASE</b></a>
     </div>
 
-    <HR/>
+    <HR />
 
     <div>
         <h5>CHANGE VIEW</h5>
         <label>
-        <input type="checkbox" (change)="changeBck()" />
-        Background
-      </label>
-        <br/>
+      <input type="checkbox" (change)="changeBck()" />
+      Background
+    </label>
+        <br />
         <label>
-        <input type="checkbox" (change)="changeFont()" />
-        Font-Size (Answer)
-      </label>
+      <input type="checkbox" (change)="changeFont()" />
+      Font-Size (Answer)
+    </label>
     </div>
-</div>-->
+</div>

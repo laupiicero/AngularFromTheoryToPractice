@@ -1,9 +1,7 @@
-<!--FORMULARIO PARA INTRODUCIR BROMAS-->
 <div class="card card-block">
     <h3 class="card-title">GENERATE YOUR JOKES/RIDDLES</h3>
     <form novalidate [formGroup]="form">
-        <div class="form-group" [ngClass]="{
-        'has-danger': setup.invalid && (setup.dirty || setup.touched),
+        <div class="form-group" [ngClass]="{'has-danger': setup.invalid && (setup.dirty || setup.touched),
         'has-success': setup.valid && (setup.dirty || setup.touched)}">
             <input type="text" class="form-control" placeholder="Your Joke/Riddle" formControlName="setup">
             <div class="form-control-feedback" *ngIf="setup.errors && (setup.dirty || setup.touched)">
@@ -19,24 +17,7 @@
                 <p *ngIf="punchline.errors.required">Your Answer is required</p>
             </div>
         </div>
-        <button type="button" class="btn btn-warning" [disabled]="form.invalid" (click)="createJoke(setup.value, punchline.value)">JOKE READY!
+        <button type="button" class="btn btn-warning" [disabled]="form.invalid" (click)="makeAJoke(setup.value, punchline.value)">JOKE READY!
     </button>
     </form>
 </div>
-
-<!--
-  OLDER VERSION
-
-  <div class="card card-block">
-    <h3>GENERATE YOUR JOKES/RIDDLES</h3>
-    <input type="text" placeholder="Your Joke/Riddle" #setup>
-    <br />
-    <br />
-    <input type="text" placeholder="Your Answer" #punchline>
-    <br/>
-    <hr/>
-    <button type="button" class="btn btn-warning" (click)="makeAJoke(setup.value , punchline.value)">
-    <b>Ready</b>
-  </button>
-
-</div>-->
