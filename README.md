@@ -2,6 +2,14 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.0.7.
 
+________________________________________________________________________________________________________
+ESPAÑOL: Avance del proyecto del tutorial 'Angular From Theory to Practice'
+Para la primera toma de contacto y comprensión del Framework
+
+Si no tienes un buen nivel de inglés y conocimientos previos de HTML, CSS y JS(JavaScript) o TS(TypeScript), te sugiero que primero cojas base de ello.
+________________________________________________________________________________________________________
+
+
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
